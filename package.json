@@ -1,0 +1,60 @@
+{
+  "name": "simple-node-intercom-io",
+  "version": "0.1.0",
+  "description": "ES6 Intercom.io library.",
+  "main": "dist/library-dist.js",
+  "scripts": {
+    "test": "gulp",
+    "build": "gulp build",
+    "coverage": "gulp coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silktide/simple-node-intercom-io.git"
+  },
+  "keywords": [
+    "intercom",
+    "intercom.io",
+    "analytics"
+  ],
+  "author": "Andrew Waite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silktide/simple-node-intercom-io/issues"
+  },
+  "homepage": "https://github.com/silktide/simple-node-intercom-io",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "chai": "^3.2.0",
+    "del": "^1.2.1",
+    "eslint": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-eslint": "^1.0.0",
+    "gulp-file": "^0.2.0",
+    "gulp-filter": "^3.0.0",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglifyjs": "^0.6.1",
+    "isparta": "^3.0.3",
+    "mkdirp": "^0.5.0",
+    "mocha": "^2.2.1",
+    "rollup": "^0.14.1",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
+  },
+  "to5BoilerplateOptions": {
+    "entryFileName": "index",
+    "exportVarName": "MyLibrary",
+    "mochaGlobals": [
+      "stub",
+      "spy",
+      "expect"
+    ]
+  }
+}
