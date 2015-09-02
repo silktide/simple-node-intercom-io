@@ -122,5 +122,5 @@ export function logIn(name, email, created_at) {
 
 
 export default {
-  loadIntercom, logIn
+  loadIntercom, logIn, setKey
 };
