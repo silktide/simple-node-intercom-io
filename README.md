@@ -1,5 +1,6 @@
 # Simple node intercom.io library
 
+[![Build Status](https://travis-ci.org/silktide/simple-node-intercom-io.svg)](https://travis-ci.org/silktide/simple-node-intercom-io)
 [![Code Climate](https://codeclimate.com/github/silktide/simple-node-intercom-io/badges/gpa.svg)](https://codeclimate.com/github/silktide/simple-node-intercom-io)
 [![Test Coverage](https://codeclimate.com/github/silktide/simple-node-intercom-io/badges/coverage.svg)](https://codeclimate.com/github/silktide/simple-node-intercom-io/coverage)
 
