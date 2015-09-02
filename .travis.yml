@@ -13,6 +13,8 @@ deploy:
   email: andrewwaite@silktide.com
   on:
     tags: true
+  api_key:
+    secure: sDPx1iikBfPcCAvnekv1yM33ski1Do1W8zmwYVbNqRv03k/M0MnKlBm7fHfoECSeS1J8r4ppplp/HT2LhLve4W3j+C7xoUJLpWn77HVOFZq+oAjhI6qLvpQMf0Y/qwSY1yo401p2/QNmQsBpwKi0H+4vXqFDGvxcbVvSMS1NsqIUsDmG7BLoiRl8/deoWHRwNdREzzf0ot+SsgXc5wL5gBuCrRPFVOk8sxApffYaIMAoBbCOKGNMDtbirH1sHXXti24iqn8l0ObgZgi83txC6RwsiWexbISrnieSWrB7D9giA6nszQ8NG31Dp6lNDM/uRjNKzpa4bgWSFVidmv//x6MFdUAWqAfnG6G8J2MiFyTSTbr6AosiQ4ZWide+s/kG5rGhMLwvHQDoYb8oDbx+ALQ54csJaZJt9qWL26b93EyX5G+J2S6+8FyAumlMk7/oUcSEfSG5UOk8dXLrmA5W57TT7esE1r6YfjmOwkGQq1riOXKomRrofZDWbGCajSKfR5+0pHz3/+CMJXH4TPXhqdTF64f0nYQIWeKcnLIh6JAy/dzr3hcLuVmDPke3aYbkwin+JJP0JgYL8wh2nqYrENZ5ENucUQVdio5fUq9JWHyzzV2dli7NIgoIfQN4XT+RHUmLf7vCSDs/6f/wuMkUYYocG5/izBz0YzlolL1a3Mc=
 after_success:
 - npm install -g codeclimate-test-reporter
 - codeclimate-test-reporter < coverage/lcov.info
