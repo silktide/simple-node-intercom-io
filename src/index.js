@@ -126,6 +126,14 @@ export function update(meta) {
 }
 
 /**
+ * When a user logs out, shutdown intercom
+ * @param meta
+ */
+export function shutdown() {
+  context.Intercom('shutdown');
+}
+
+/**
  * On login, fire event to Intercom
  */
 export function boot(name, email, created_at, meta) {
@@ -144,5 +152,5 @@ export function boot(name, email, created_at, meta) {
 
 
 export default {
-  setup, boot, setKey, update, trackEvent
+  setup, boot, setKey, update, trackEvent, shutdown
 };

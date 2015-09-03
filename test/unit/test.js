@@ -18,6 +18,11 @@ describe('Intercom tests', () => {
     expect(mockIntercom).to.have.been.calledWith('boot');
   });
 
+  it('should call Intercom on shutdown', () => {
+    Intercom.shutdown();
+    expect(mockIntercom).to.have.been.calledWith('shutdown');
+  });
+
   it('should call Track event on login', () => {
     Intercom.trackEvent();
     expect(mockIntercom).to.have.been.calledWith('trackEvent');
