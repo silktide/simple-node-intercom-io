@@ -118,25 +118,31 @@ export function trackEvent(name, meta) {
 }
 
 /**
- * On page change, fire event to intercom
+ * When user's data changes, set user props
+ * @param meta
  */
-export function changePage() {
-  context.Intercom('update');
+export function update(meta) {
+  context.Intercom('update', meta);
 }
 
 /**
  * On login, fire event to Intercom
  */
-export function logIn(name, email, created_at) {
-  context.Intercom('boot', {
-    app_id: key,
-    name: name,
-    email: email,
-    created_at: created_at
-  });
+export function boot(name, email, created_at, meta) {
+
+  if (typeof meta !== 'object') {
+    meta = {};
+  }
+
+  meta.app_id = key;
+  meta.name = name;
+  meta.email = email;
+  meta.created_at = created_at;
+
+  context.Intercom('boot', meta);
 }
 
 
 export default {
-  setup, logIn, setKey, changePage, trackEvent
+  setup, boot, setKey, update, trackEvent
 };

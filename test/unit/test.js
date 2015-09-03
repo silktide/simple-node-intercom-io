@@ -9,12 +9,12 @@ describe('Intercom tests', () => {
   });
 
   it('should call Intercom on page change', () => {
-    Intercom.changePage();
+    Intercom.update();
     expect(mockIntercom).to.have.been.calledWith('update');
   });
 
   it('should call Intercom on login', () => {
-    Intercom.logIn();
+    Intercom.boot();
     expect(mockIntercom).to.have.been.calledWith('boot');
   });
 
