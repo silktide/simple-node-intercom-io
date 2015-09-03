@@ -7,7 +7,13 @@
 A simple wrapper for intercom.io client library written in ES6.
 
 * Loads Intercom.io tracking JavaScript library.
-
+* Exposes a convenient interface for:
+    - Setting your Intercom.io API key.
+    - Initiating user session.
+    - Tracking events.
+    - Tracking user properties.
+    - Firing page change events (for single page apps).
+    
 ## Usage example
 
 First, install the library.
