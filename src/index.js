@@ -138,5 +138,5 @@ export function logIn(name, email, created_at) {
 
 
 export default {
-  setup, logIn, setKey, changePage
+  setup, logIn, setKey, changePage, trackEvent
 };

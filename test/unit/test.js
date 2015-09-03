@@ -18,4 +18,9 @@ describe('Intercom tests', () => {
     expect(mockIntercom).to.have.been.calledWith('boot');
   });
 
+  it('should call Track event on login', () => {
+    Intercom.trackEvent();
+    expect(mockIntercom).to.have.been.calledWith('trackEvent');
+  });
+
 });
