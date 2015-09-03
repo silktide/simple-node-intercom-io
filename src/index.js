@@ -111,6 +111,13 @@ export function setup() {
 }
 
 /**
+ * On event, fire to intercom
+ */
+export function trackEvent(name, meta) {
+  context.Intercom('trackEvent', name, meta);
+}
+
+/**
  * On page change, fire event to intercom
  */
 export function changePage() {
