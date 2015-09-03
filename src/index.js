@@ -23,6 +23,10 @@ export function setDocument(newDocument) {
   injectedDoc = newDocument;
 }
 
+export function setIntercomFunction(intercomfn) {
+  intercom = intercomfn;
+}
+
 /**
  * Get the document.  Allows us to inject a mock document
  * for testing outside a browser env.
@@ -70,7 +74,7 @@ function loadExternalScript(source) {
 /**
  * Load intercom library as async file
  */
-export function loadIntercom() {
+export function setup() {
 
   if (loaded) {
     return;
@@ -109,6 +113,13 @@ export function loadIntercom() {
 }
 
 /**
+ * On page change, fire event to intercom
+ */
+export function changePage() {
+  intercom('update');
+}
+
+/**
  * On login, fire event to Intercom
  */
 export function logIn(name, email, created_at) {
@@ -122,5 +133,5 @@ export function logIn(name, email, created_at) {
 
 
 export default {
-  loadIntercom, logIn, setKey
+  setup, logIn, setKey, changePage
 };

@@ -1,8 +1,21 @@
-import Intercom, { setDocument } from '../../src/index';
+import Intercom, { setDocument, setIntercomFunction } from '../../src/index';
 
-let insertBeforeSpy, clock;
+let mockIntercom;
 
-describe('A feature test', () => {
+describe('Intercom tests', () => {
+  beforeEach(() => {
+    mockIntercom = sinon.spy();
+    setIntercomFunction(mockIntercom);
+  });
 
+  it('should call Intercom on page change', () => {
+    Intercom.changePage();
+    expect(mockIntercom).to.have.been.calledWith('update');
+  });
+
+  it('should call Intercom on login', () => {
+    Intercom.logIn();
+    expect(mockIntercom).to.have.been.calledWith('boot');
+  });
 
 });
