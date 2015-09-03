@@ -2,7 +2,6 @@ let loaded = false;
 let key = null;
 let injectedDoc = null;
 let context = getGlobalContext();
-let intercom = null;
 
 /**
  * Set the Intercom API key
@@ -24,7 +23,7 @@ export function setDocument(newDocument) {
 }
 
 export function setIntercomFunction(intercomfn) {
-  intercom = intercomfn;
+  context.Intercom = intercomfn;
 }
 
 /**
@@ -85,10 +84,9 @@ export function setup() {
     return;
   }
 
-  intercom = context.Intercom;
-  if (typeof intercom === 'function') {
-    intercom('reattach_activator');
-    //intercom('update', intercomSettings);
+  if (typeof context.Intercom === 'function') {
+    context.Intercom('reattach_activator');
+    //context.Intercom('update', intercomSettings);
   } else {
     var i = function () {
       i.c(arguments)
@@ -116,14 +114,14 @@ export function setup() {
  * On page change, fire event to intercom
  */
 export function changePage() {
-  intercom('update');
+  context.Intercom('update');
 }
 
 /**
  * On login, fire event to Intercom
  */
 export function logIn(name, email, created_at) {
-  intercom('boot', {
+  context.Intercom('boot', {
     app_id: key,
     name: name,
     email: email,
