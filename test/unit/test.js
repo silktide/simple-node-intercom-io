@@ -28,4 +28,16 @@ describe('Intercom tests', () => {
     expect(mockIntercom).to.have.been.calledWith('trackEvent');
   });
 
+  it('should not call Track event when more than 5 properties are passed in context', () => {
+    Intercom.trackEvent('example', {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+      e: 5,
+      f: 6
+    });
+    expect(mockIntercom).to.have.not.been.called;
+  });
+
 });

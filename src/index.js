@@ -114,6 +114,10 @@ export function setup() {
  * On event, fire to intercom
  */
 export function trackEvent(name, meta) {
+  if (typeof meta == 'object' && Object.keys(meta).length > 5) {
+    console.error('Unable to track an event with more than 5 properties');
+    return;
+  }
   context.Intercom('trackEvent', name, meta);
 }
 
