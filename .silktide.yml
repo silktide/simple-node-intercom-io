@@ -1,4 +1,6 @@
 ---
+app: simple-node-intercom-io
 type: library
 source: open
+language: js
 ...

@@ -1,0 +1,28 @@
+version: 2
+workflows:
+  version: 2
+  testing:
+    jobs:
+      - test
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:7.10
+
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - package-dev-v1-{{ checksum "package.json" }}-{{checksum "package-lock.json" }}
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: package-dev-v1-{{ checksum "package.json" }}-{{checksum "package-lock.json" }}
+
+      - run: npm test
